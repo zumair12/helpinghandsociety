@@ -1,0 +1,35 @@
+
+<div class="row h-100 design-display">
+  <div class="col-md-8">
+      <%= render "student_cards" %>
+  </div>
+  <div class="col-md-4 mt-5 container w-25">
+    <%= form_for(:user, :url => session_path(:user), :html => {:class => "row g-3"}) do |f| %>
+
+      <div class="col-md-12 text-center text-white">
+        <h3>
+          Log In
+        </h3>
+      </div>
+      <div class="col-md-12">
+        <%= f.text_field :email, class: "form-control", placeholder: "Enter email" %>
+      </div>
+
+      <div class="col-md-12">
+        <%= f.password_field :password, class: "form-control", placeholder: "Enter Password" %>
+      </div>
+
+      <div class="col-md-12">
+        <%= f.label :remember_me, class: "text-white" %>
+        <%= f.check_box :remember_me %>
+      </div>
+      <div class="col-md-6">
+      <%= f.submit 'Sign in', class: "btn btn-primary w-50 m-2" %>
+      </div>
+      <div class="col-md-6">
+      <%= link_to "Forgot your password?", new_password_path(:user), class: "btn btn-secondary  m-2" %>
+      </div>
+    <% end %>
+        <%# image_tag "hhs", class: "d-block w-100 h-25" %>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<%= render "shared/header", show_gradient: true %>
+<div class="design-display">
+<% if signed_in? %>
+  <%= render "dash_board" %>
+<% else %>
+  <%= render "without_signup" %>
+<% end %>
+</div>
+<%= render "shared/footer" %>

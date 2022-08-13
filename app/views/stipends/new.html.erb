@@ -1,0 +1,9 @@
+<%= render "shared/header", show_gradient: true %>
+<div class="p-2">
+  <%= link_to "Back to stipends", stipends_path, class: "btn btn-primary" %>
+</div>
+<div class="container p-5" style="max-width: 1000px;">
+  <h1 class="text-center">New stipend</h1>
+  <%= render "form", stipend: @stipend %>
+</div>
+<%= render "shared/footer" %>

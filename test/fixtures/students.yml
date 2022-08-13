@@ -1,0 +1,56 @@
+# == Schema Information
+#
+# Table name: students
+#
+#  id                :integer          not null, primary key
+#  address           :string
+#  cnic              :string
+#  emergency_number  :string
+#  father_name       :string
+#  father_occupation :string
+#  jazzcash_number   :string
+#  mobile_number     :string
+#  name              :string
+#  registered_at     :date
+#  state             :string
+#  stipend_end_at    :date
+#  stipend_start_at  :date
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  category_id       :integer
+#  educational_id    :integer
+#
+
+one:
+  name: MyString
+  father_name: MyString
+  mobile_number: MyString
+  jazzcash_number: MyString
+  cnic: MyString
+  unversity_name: MyString
+  degree: MyString
+  address: MyString
+  father_occupation: MyString
+  emergency_number: MyString
+  registered_at: 2022-07-23
+  stipend_start_at: 2022-07-23
+  stipend_end_at: 2022-07-23
+  state: MyString
+  category_id: 1
+
+two:
+  name: MyString
+  father_name: MyString
+  mobile_number: MyString
+  jazzcash_number: MyString
+  cnic: MyString
+  unversity_name: MyString
+  degree: MyString
+  address: MyString
+  father_occupation: MyString
+  emergency_number: MyString
+  registered_at: 2022-07-23
+  stipend_start_at: 2022-07-23
+  stipend_end_at: 2022-07-23
+  state: MyString
+  category_id: 1

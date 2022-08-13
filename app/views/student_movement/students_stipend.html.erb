@@ -1,0 +1,24 @@
+<%= render "shared/header", show_gradient: nil %>
+<h1>Students Stipends list (Count: <%= @students_length %>)</h1>
+<%= render 'form_for_date' %>
+<div id="students">
+  <table class="table table-striped">
+    <thead>
+      <th>Name</th>
+      <th>Pending Stipend Amount</th>
+      <th>Pending Stipend Months</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Destroy</th>
+    </thead>
+  <tbody class="table-group-divider">
+    <% @students.each do |student| %>
+      <%= render "student", student:, date_to: @date_to, list: "pending" %>
+    <% end %>
+  </tbody>
+  </table>
+</div>
+<%= will_paginate @students, list_classes: %w(pagination justify-content-center) %>
+
+<%= link_to "New student", new_student_path, class: "btn btn-primary m-2" %>
+<%= render "shared/footer" %>

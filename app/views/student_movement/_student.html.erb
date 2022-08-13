@@ -1,0 +1,15 @@
+<tr id="<%= dom_id student %>">
+  <td><%= student.name %></td>
+  <% if list == "registered" %>
+    <td>
+      <%= link_to "Approved", update_status_path(student, state: "approved", redirect_back: "registered_students"), class: "btn btn-success" %>
+      <%= link_to "Rejected", update_status_path(student, state: "rejected", redirect_back: "registered_students"), class: "btn btn-warning" %>
+    </td>
+  <% else %>
+    <td><%= student.pending_amount(date_to) %></td>
+    <td><%= student.reload.readable_pending_months_name(date_to) %></td>
+  <% end %>
+  <td><%= link_to "Show", student_path(student), class: "btn btn-info" %></td>
+  <td><%= link_to "Edit", edit_student_path(student), class: "btn btn-primary" %></td>
+  <td><%= button_to "Destroy", student, method: :delete, class: "btn btn-danger" %></td>
+</tr>

@@ -1,0 +1,18 @@
+<% the_months = (Date.today.prev_year.beginning_of_year..Date.today.end_of_year).select { |d| d.day == 1 } %>
+<%= form_with(url: students_stipend_path, method: :get, data: {turbo_frame: "student_movement"}, html: {class: "row d-flex"}) do |form| %>
+  <div class="m-2 col-md-1">
+    <%= form.label :from, style: "display: block" %>
+  </div>
+  <div class="m-2 col-md-1">
+    <%= form.select :from, the_months.map { |d| [d.strftime('%b %Y'), d] }, {:selected => params[:from]}, {:class => "form-select"} %>
+  </div>
+  <div class="m-2 col-md-1">
+    <%= form.label :to, style: "display: block" %>
+  </div>
+  <div class="m-2 col-md-1">
+    <%= form.select :to, the_months.map { |d| [d.strftime('%b %Y'), d] }, {:selected => params[:to]}, {:class => "form-select"} %>
+  </div>
+  <div class="m-2 col-md-1">
+    <%= form.submit 'Search', class: "btn btn-primary" %>
+  </div>
+<% end %>

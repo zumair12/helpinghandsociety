@@ -1,0 +1,20 @@
+<h1>Stipends</h1>
+<div id="stipends">
+  <table class="table table-striped">
+    <thead>
+      <th>Amount</th>
+      <th>Stipend Month</th>
+      <th>Payment Method</th>
+      <th>Received At</th>
+      <th>Received By</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Destroy</th>
+    </thead>
+  <tbody class="table-group-divider">
+    <% stipends.each do |stipend| %>
+      <%= render 'stipends/stipend', stipend: %>
+    <% end %>
+  </tbody>
+  </table>
+</div>

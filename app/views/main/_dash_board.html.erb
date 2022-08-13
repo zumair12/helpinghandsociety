@@ -1,0 +1,24 @@
+<div class="container row">
+  <div class="container row col-md-9">
+    <div class="col-md-3 p-2" style="max-width: 200px">
+      <%= link_to "Students", students_path, class: "btn btn-light d-block m-2" %>
+    </div>
+    <div class="col-md-3 p-2" style="max-width: 200px">
+      <%= link_to "Stipends", stipends_path, class: "btn btn-light d-block m-2" %>
+    </div>
+    <div class="col-md-3 p-2" style="max-width: 200px">
+      <%= link_to "Sponsords", sponsords_path, class: "btn btn-light d-block m-2" %>
+    </div>
+    <div class="col-md-3 p-2" style="max-width: 200px">
+      <%= link_to "Categories", categories_path, class: "btn btn-light d-block m-2" %>  
+    </div>
+  </div>
+  <div class="container row">
+    <div class="p-2 col-md-3" style="max-width: 200px">
+      <%= link_to "Students for Approval", registered_students_path, class: "btn btn-light d-block m-2" %>
+    </div>
+    <div class="p-2 col-md-3" style="max-width: 200px">
+      <%= link_to "Pending Students", students_stipend_path, class: "btn btn-light d-block m-2" %>
+    </div>
+  </div>
+</div>

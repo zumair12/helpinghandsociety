@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @sponsord %>
+
+<div>
+  <%= link_to "Edit this sponsord", edit_sponsord_path(@sponsord) %> |
+  <%= link_to "Back to sponsords", sponsords_path %>
+
+  <%= button_to "Destroy this sponsord", @sponsord, method: :delete %>
+</div>

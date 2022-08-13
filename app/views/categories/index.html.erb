@@ -1,0 +1,20 @@
+<p style="color: green" class="position-absolute"><%= notice %></p>
+<%= render "shared/header", show_gradient: false %>
+<h1>categories</h1>
+<div id="categories">
+  <table class="table table-striped">
+    <thead>
+      <th>Name</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Destroy</th>
+    </thead>
+  <tbody class="table-group-divider">
+    <% @categories.each do |category| %>
+      <%= render category %>
+    <% end %>
+  </tbody>
+  </table>
+</div>
+<%= link_to "New category", new_category_path, class: "btn btn-primary m-2" %>
+<%= render "shared/footer" %>

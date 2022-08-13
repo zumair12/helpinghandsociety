@@ -1,0 +1,12 @@
+<%= render "shared/header", show_gradient: true %>
+<div class="p-2">
+  <%= link_to "Back to students", students_path, class: "btn btn-primary" %>
+</div>
+<div class="container p-5" style="max-width: 1000px;">
+  <h1 class="text-center">Editing student</h1>
+  <%= render "form", student: @student %>
+</div>
+
+<div class="p-2">
+  <%= link_to "Show this student", @student, class: "btn btn-light" %>
+</div>

@@ -1,0 +1,15 @@
+<p class="position-absolute" style="color: green"><%= notice %></p>
+<%= render "shared/header", show_gradient: false %>
+<%= link_to "Back to categories", categories_path, class: "btn btn-primary m-2"  %>
+<div class="container row">
+  <div class="d-flex col-md-4">  
+    <div class="m-1 fw-bold">Name </div>
+    <div class="m-1 "><%= @category.name %></div>
+  </div>
+  <div class="">
+    <%= link_to "Edit", edit_category_path(@category), class: "btn btn-primary m-2" %>
+    <%= button_to "Destroy", @category, method: :delete, class: "btn btn-danger m-2" %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

@@ -1,0 +1,11 @@
+<tr id="<%= dom_id student %>">
+  <td><%= student.name %></td>
+  <td><%= student.father_name %></td>
+  <td><%= student.registered_at %></td>
+  <td><%= student.stipend_start_at %></td>
+  <td><%= student.stipend_end_at %></td>
+  <td class="<%= student.state %>"><%= student.state.capitalize %></td>
+  <td><%= link_to "Show", student_path(student), class: "btn btn-info" %></td>
+  <td><%= link_to "Edit", edit_student_path(student), class: "btn btn-primary" %></td>
+  <td><%= button_to "Destroy", student, method: :delete, class: "btn btn-danger" %></td>
+</tr>

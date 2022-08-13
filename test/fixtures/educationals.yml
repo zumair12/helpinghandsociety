@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: educationals
+#
+#  id            :integer          not null, primary key
+#  end_at        :date
+#  start_at      :date
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  degree_id     :integer
+#  university_id :integer
+#
+
+one:
+  degree_id: 1
+  university_id: 1
+  start_at: 2022-07-23
+  end_at: 2022-07-23
+
+two:
+  degree_id: 1
+  university_id: 1
+  start_at: 2022-07-23
+  end_at: 2022-07-23

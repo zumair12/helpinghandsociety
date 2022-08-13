@@ -1,0 +1,20 @@
+<div class="p-4" style="background-image: url(<%= asset_path 'back_image.png' %>); height: 150px;">
+  <h1 class="font-gradient" style="font-size: 50px;">Helping Hand Society</h1>
+  <% if signed_in? %>
+    <%= link_to "Dashboard", root_path, :class => "btn btn-light" %>
+    <div class="position-absolute " style="top: 20px; right: 20px">
+    <%= link_to "Logout", destroy_user_session_path, :class => "btn btn-light", style: "width: 100px; height: 50px; line-height: 2;" %>
+    </div>
+  <% else %>
+    <%= link_to "Sign up now!", new_user_registration_path, :class => "btn btn-light" %>
+  <% end %>
+</div>
+<% if show_gradient.present? %>
+  <% if show_gradient %>
+    <div class="design-display">
+  <% else %>
+    <div class="blanchedalmond">
+  <% end %>
+<% else %>
+  <div>
+<% end %>

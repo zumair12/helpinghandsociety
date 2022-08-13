@@ -1,0 +1,10 @@
+<tr>
+  <td><%= stipend.amount %></td>
+  <td><%= stipend.stipend_in %></td>
+  <td><%= stipend.recevied_at %></td>
+  <td><%= stipend.recevied_by %></td>
+  <td><%= stipend.payment_method %></td>
+  <td><%= link_to "Show", stipend_path(stipend), class: "btn btn-info" %></td>
+  <td><%= link_to "Edit", edit_stipend_path(stipend), class: "btn btn-primary" %></td>
+  <td><%= button_to "Destroy", stipend, method: :delete, class: "btn btn-danger" %></td>
+</tr>

@@ -12,7 +12,11 @@ Rails.application.routes.draw do
   resources :stipends
   resources :sponsords
   resources :categories
-  resources :students
+  resources :students do 
+    collection do
+      resources :registration
+    end
+  end
 
   # => Student Movement
   get '/registered_students', to: 'student_movement#registered_students', as: 'registered_students'

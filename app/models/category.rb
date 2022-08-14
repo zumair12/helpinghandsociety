@@ -9,15 +9,11 @@
 #
 class Category < ApplicationRecord
   has_many :students
-  enum name: {
-    medical: "med",
-    engineering: "eng"
-  }
   def self.med
-    medical.first || Category.create(name: 'med')
+    Category.where(name: 'Medical') || Category.create(name: 'Medical')
   end
 
   def self.eng
-    engineering.first || Category.create(name: 'eng')
+    Category.where(name: 'Engineering') || Category.create(name: 'Engineering')
   end
 end

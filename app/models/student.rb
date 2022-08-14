@@ -22,7 +22,12 @@
 #
 class Student < ApplicationRecord
   belongs_to :category
+  belongs_to :educational
   has_many :stipends
+
+  validates_presence_of :cnic, :address,
+    :name, :father_name, :father_occupation, 
+    :jazzcash_number, :mobile_number, :emergency_number
 
   after_initialize :init
 

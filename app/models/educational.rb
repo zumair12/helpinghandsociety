@@ -11,4 +11,9 @@
 #  university_id :integer
 #
 class Educational < ApplicationRecord
+  belongs_to :degree
+  belongs_to :university
+  has_many :students
+
+  validates_presence_of :end_at, :start_at
 end

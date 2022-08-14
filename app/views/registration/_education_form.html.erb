@@ -1,0 +1,37 @@
+<h4 class="mt-5">Educational Details</h4>
+
+<%=  form.fields_for :educational do |edu| %>
+  <%=  edu.fields_for :degree do |deg| %>
+    <div class="col-md-6">
+      <%= deg.text_field :name, required: true, class: "form-control", placeholder: "Degree Name" %>
+    </div>
+    <div class="col-md-6">
+      <%= deg.select(:years, Degree.years.keys.map {|role| [role.titleize,role]}, {}, class: "form-select" ) %>
+    </div>
+  <% end %>
+
+  <div class="col-md-6">
+    <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class: "form-select"}) %>
+  </div>
+
+  <div class="col-md-6">
+    <%= edu.collection_select(:university_id, University.all.order(:name), :id, :name, {}, {class: "form-select"}) %>
+  </div>
+
+  <div class="col-md-6 mt-3">
+    <div class="col-md-12">
+      <%= edu.label :start_at, class: "form-label" %>
+    </div>
+    <div class="col-md-12">
+      <%= edu.date_field :start_at, required: true, class: "form-control"%>
+    </div>
+  </div>
+  <div class="col-md-6 mt-3">
+    <div class="col-md-12">
+      <%= edu.label :end_at, class: "form-label" %>
+    </div>
+    <div class="col-md-12">
+      <%= edu.date_field :end_at, required: true, class: "form-control" %>
+    </div>
+  </div>
+<% end %>

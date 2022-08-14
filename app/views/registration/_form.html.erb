@@ -1,0 +1,48 @@
+<%= form_with(model: student, url: registration_index_path, :html => {:class => "row g-3"})  do |form| %>
+  <% if student.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+        <% student.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="col-md-6">
+    <%= form.text_field :name, required: true, class: "form-control", placeholder: "Name" %>
+  </div>
+
+  <div class="col-md-6">
+    <%= form.text_field :father_name, required: true, class: "form-control", placeholder: "Father name"  %>
+  </div>
+
+  <div class="col-md-3">
+    <%= form.text_field :mobile_number, required: true, class: "form-control", placeholder: "Mobile number" %>
+  </div>
+
+  <div class="col-md-3">
+    <%= form.text_field :jazzcash_number, required: true, class: "form-control", placeholder: "Jazzcash number" %>
+  </div>
+
+  <div class="col-md-6">
+    <%= form.text_field :cnic, required: true, class: "form-control", placeholder: "CNIC Number" %>
+  </div>
+
+  <div class="col-md-12">
+    <%= form.text_field :address, required: true, class: "form-control", placeholder: "Address" %>
+  </div>
+
+  <div class="col-md-6">
+    <%= form.text_field :father_occupation, required: true, class: "form-control", placeholder: "Father Occupation" %>
+  </div>
+
+  <div class="col-md-6">
+    <%= form.text_field :emergency_number, required: true, class: "form-control", placeholder: "Emergency Number" %>
+  </div>
+  <%= render "education_form", form: %>
+  <div class="text-center">
+    <%= form.submit "Registered", :class => "btn btn-primary" %>
+  </div>
+<% end %>

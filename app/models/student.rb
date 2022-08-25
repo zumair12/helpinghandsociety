@@ -93,4 +93,8 @@ class Student < ApplicationRecord
   def self.stipend_decided_amount
     2_000
   end
+
+  def clear_upto(date_to)
+    StipendConcern.clear_pervious!(self, date_to)
+  end
 end

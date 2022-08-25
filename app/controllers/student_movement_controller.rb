@@ -8,7 +8,7 @@ class StudentMovementController < ApplicationController
   def update_status
     respond_to do |format|
       if change_status
-        format.html { redirect_to redirect_back_path, notice: "#{@student.name.capitalize} was successfully #{params[:state]}." }
+        format.html { redirect_to redirect_back_path(params[:redirect_back]), notice: "#{@student.name.capitalize} was successfully #{params[:state]}." }
         format.json { render :show, status: :created, location: @student }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -34,15 +34,6 @@ class StudentMovementController < ApplicationController
 
   def change_status
     @student.send("#{params[:state]}!".to_sym)
-  end
-
-  def redirect_back_path
-    case params[:redirect_back]
-    when "registered_students"
-      registered_students_path
-    else
-      student_url(@student)      
-    end
   end
 
   def set_student

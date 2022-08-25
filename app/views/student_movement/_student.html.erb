@@ -8,8 +8,8 @@
   <% else %>
     <td><%= student.pending(date_to)[:amount] %></td>
     <td><%= student.pending(date_to)[:readable_month] %></td>
+    <td><%= link_to "Clear Stipend", clear_pervious_path(student, date_to: date_to, redirect_back: "students_stipend", parameter: {to: params[:to], from: params[:from], page: params[:page]}), class: "btn btn-secondary" %></td>
   <% end %>
   <td><%= link_to "Show", student_path(student), class: "btn btn-info" %></td>
   <td><%= link_to "Edit", edit_student_path(student), class: "btn btn-primary" %></td>
-  <td><%= button_to "Destroy", student, method: :delete, class: "btn btn-danger" %></td>
 </tr>

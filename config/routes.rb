@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get '/registered_students', to: 'student_movement#registered_students', as: 'registered_students'
   get '/update_status/:id', to: 'student_movement#update_status', as: 'update_status'
   get '/students_stipend', to: 'student_movement#students_stipend', as: 'students_stipend'
+  get '/clear_pervious/:id', to: 'give_stipend#clear_pervious', as: 'clear_pervious'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

@@ -12,4 +12,15 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: %i[name role])
     devise_parameter_sanitizer.permit(:account_update, keys: %i[name role])
   end
+
+  def redirect_back_path(redirect_path, parameter = {})
+    case redirect_path
+    when "registered_students"
+      registered_students_path
+    when "students_stipend"
+      students_stipend_path(parameter)
+    else
+      student_url(@student)      
+    end
+  end
 end

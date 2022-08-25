@@ -1,7 +1,7 @@
 <%= render "shared/header", show_gradient: nil %>
-<h1>Students Stipends list (Count: <%= @students_length %>)</h1>
+<h1>Students Stipends list (Count: <%= @all_students.length %>)</h1>
 <%= render 'form_for_date' %>
-<div id="students">
+<div id="students" class="height-400px">
   <table class="table table-striped">
     <thead>
       <th>Name</th>

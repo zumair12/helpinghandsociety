@@ -7,3 +7,9 @@ application.debug = false
 window.Stimulus   = application
 
 export { application }
+
+$(document).ready(function(){
+  $('.close-by-js').click(function(){
+    $(this).parent().hide();
+  }); 
+});

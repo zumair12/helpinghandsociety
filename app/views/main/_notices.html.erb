@@ -1,0 +1,14 @@
+<div style="position: relative;">
+  <div  style="position: absolute; right: 0px;">
+    <% @todays_notices.each do |notice| %>
+      <div class="alert alert-<%= notice.alert %> alert-dismissible fade show m-3" role="alert">
+        <span class="me-3">
+          <strong><%= notice.name %>: </strong> <%= notice.message %>
+        </span>
+        <button type="button" class="close btn btn-dark close-by-js" data-dismiss="alert" aria-label="Close" style="position: absolute; right: 10px; top: 10px;">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <% end %>
+  </div>
+</div>

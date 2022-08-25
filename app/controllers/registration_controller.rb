@@ -12,7 +12,7 @@ class RegistrationController < ApplicationController
     @student = @registered.student
     respond_to do |format|
       if @registered.saved?
-        format.html { redirect_to root_path, notice: "Registered successfully, Request send to Mam #{Information.mam_name}" }
+        format.html { redirect_to root_path, notice: "Registered successfully, Request send to Mam #{Info.mam_name}" }
         format.json { render :show, status: :created, location: @student }
       else
         format.html { render :new, status: :unprocessable_entity }

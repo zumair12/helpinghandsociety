@@ -18,9 +18,8 @@ class StudentMovementController < ApplicationController
   end
 
   def students_stipend
-    all_students = Student.where(id: Student.pending_from(date_from, date_to).reject {|student| student.pending_amount.zero? }.pluck(:id))
-    @students_length = all_students.length
-    @students = all_students.paginate(page: params[:page], per_page: 10)
+    @all_students = Student.approved.pending_from(date_from, date_to).order_by_created
+    @students = @all_students.paginate(page: params[:page], per_page: 10)
   end
 
   private

@@ -211,3 +211,6 @@
     font-weight:600
   }
 }
+.height-400px {
+  min-height: 400px;
+}

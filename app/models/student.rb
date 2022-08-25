@@ -47,11 +47,14 @@ class Student < ApplicationRecord
     )
   }
   scope :pending_from, -> (from, to = Date.today) { 
-    approved
-    .joins(:stipends)
+    joins(:stipends)
     .where('stipends.stipend_in >= ? AND stipends.stipend_in <= ?', from, to)
     .group('students.id')
     .having("COUNT(students.id) < #{MonthCalculator.count_months(from, to)}")
+  }
+
+  scope :last_month, -> {
+    where(stipend_end_at: Date.today.beginning_of_month..Date.today.end_of_month)
   }
 
   def init
@@ -67,24 +70,24 @@ class Student < ApplicationRecord
     category.eng?
   end
 
-  def pending_amount(date_to = Date.today)
-    (MonthCalculator.count_months(stipend_start_at, date_to) - stipends.where('stipend_in < ?', date_to).count) * Student.stipend_decided_amount
-  end
-
-  def recevied_amount
+  def amount_recevied
     stipends.count * Student.stipend_decided_amount
   end
 
-  def readable_pending_months_name(date_to = Date.today)
-    pending_months_name(date_to).map {|r| "#{r[0]}" }.join(", ")
-  end
+  def pending(date_to = Date.today)
+    months = MonthCalculator.month_names(stipend_start_at, date_to) - recevied_months
+    amount = months.count * Student.stipend_decided_amount
+    readable_month = months.map {|m, y| m[0..2] }.join(" ")
 
-  def pending_months_name(date_to = Date.today)
-    MonthCalculator.month_names(stipend_start_at, date_to) - recevied_months
+    { months:, amount:, readable_month: }
   end
 
   def recevied_months
     stipends.map(&:month_and_year)
+  end
+
+  def full_name
+    "#{name} #{father_name}"
   end
 
   def self.stipend_decided_amount

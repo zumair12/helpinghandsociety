@@ -10,7 +10,7 @@ class MonthCalculator
   end
 
   def self.count_months(from, to = Date.today)
-    (to.year * 12 + to.month) - (from.year * 12 + from.month)
+    (to.year * 12 + to.month) - (from.year * 12 + from.month) + 1
   end
 
 end
